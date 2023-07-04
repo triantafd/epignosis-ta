@@ -5,10 +5,10 @@ import { CustomLoadingSpinner } from './CustomLoadingSpinner';
 const UsersList = ({ users, setSelectedUser, isLoading }) => {
   const [selectedIdx, setSelectedIdx] = React.useState(null);
   /*   const MemoizedUserProfile = React.memo(UserProfile); */
-
+  console.log(isLoading)
   return (
     <div className="overflow-y-auto scrollbar-hidden md:flex-1 flex-none relative">
-      {isLoading && <CustomLoadingSpinner />}
+      {isLoading && <div data-testid="custom-loading-spinner"><CustomLoadingSpinner /></div>}
       {!isLoading && users && users.length === 0 && (
         <div className='absolute bottom-[50%] left-[50%]'>
           <p>No users</p>
