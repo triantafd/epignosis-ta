@@ -4,5 +4,8 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 COPY . .
+RUN npm install -g server
+RUN npm run build
+COPY build/ .
 
-CMD ["server", "s", "build"]
+CMD ["npm", "run", "buildVersion"]
