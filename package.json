@@ -20,6 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "docker-build": "docker build -t epignosis-ta .",
+    "docker-run": "docker run -p 3000:3000 epignosis-ta",
     "buildVersion": "serve -s build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
