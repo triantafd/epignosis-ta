@@ -1,8 +1,8 @@
 import *  as React from 'react'
 import useFetchUsers from './hooks/useFetchUsers';
 import './index.css';
-import UsersList from './component/UsersList';
-import UserForm from './component/UserForm';
+import UsersList from './containers/UsersList';
+import UserForm from './containers/UserForm';
 
 function App() {
   //A custom hook similar to how reactQuery works
@@ -29,7 +29,7 @@ function App() {
               {/* Photos and profile info  */}
               <UsersList users={users} setSelectedUser={setSelectedUser} isLoading={isLoading} />
               {/* Form  */}
-              <UserForm selectedUser={selectedUser} setUsers={setUsers} />
+              <UserForm selectedUser={selectedUser} setUsers={setUsers} setSelectedUser={setSelectedUser} />
             </div>
           </div>
         </div>

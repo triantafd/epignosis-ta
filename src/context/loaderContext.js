@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from "react";
-import { AppLoadingSpinner } from '../component/AppLoadingSpinner'
+import { AppLoadingSpinner } from '../components/Spinners/AppLoadingSpinner'
 
 const LoadingContext = createContext({ wrappedWithloader: null });
 

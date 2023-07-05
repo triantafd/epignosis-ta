@@ -9,7 +9,7 @@ const initialValuesFromConf = formFields.reduce((acc, field) => {
   return acc;
 }, {})
 
-const UserForm = ({ selectedUser, setUsers }) => {
+const UserForm = ({ selectedUser, setUsers, setSelectedUser }) => {
   const [isFormEdited, setIsFormEdited] = React.useState(false);
   const [initialValues, setInitialValues] = React.useState(initialValuesFromConf);
   const validationSchema = dynamicValidationSchema(formFields)
@@ -64,6 +64,7 @@ const UserForm = ({ selectedUser, setUsers }) => {
                 });
                 const updatedUser = await wrappedUpdateFuncwithLoader(values);
                 setUsers((previousUsers) => previousUsers.map((user) => user.id === updatedUser.id ? updatedUser : user))
+                setSelectedUser(updatedUser)
               } catch (error) {
                 console.log(error)
               }

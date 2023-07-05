@@ -1,12 +1,12 @@
 import React from 'react';
-/* import { render, fireEvent, waitFor, screen, act } from '@testing-library/react'; */
-import UsersList from './component/UsersList';
-import UserProfile from './component/UserProfile';
-import UserForm from './component/UserForm';
-import { LoaderProvider } from './context/loaderContext';
+import UsersList from './containers/UsersList';
+import UserProfile from './components/UserProfile';
+import UserForm from './containers/UserForm';
 import { render, fireEvent, waitFor, screen } from './test-utils/testing-library-utils'
 import { act } from 'react-dom/test-utils';
-import userEvent from '@testing-library/user-event'
+/* import { render, fireEvent, waitFor, screen, act } from '@testing-library/react'; 
+import { LoaderProvider } from './context/loaderContext';
+import userEvent from '@testing-library/user-event' */
 
 describe('UsersList', () => {
   test('Show No users when users is empty and loading is false', async () => {
@@ -70,8 +70,9 @@ describe('UserForm', () => {
         "address": "120 Cedar Street, Mansfield, Kentucky, 8890"
       };
       const setUsersMock = jest.fn();
+      const setSelectedUser = jest.fn();
 
-      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} />);
+      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} setSelectedUser={setSelectedUser} />);
 
       const nameInput = screen.getByLabelText('Name');
       const emailInput = screen.getByLabelText('Email');
@@ -96,7 +97,8 @@ describe('UserForm', () => {
         "address": "120 Cedar Street, Mansfield, Kentucky, 8890"
       };
       const setUsersMock = jest.fn();
-      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} />);
+      const setSelectedUser = jest.fn();
+      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} setSelectedUser={setSelectedUser} />);
       //At first Save btn is disabled and cancel btn is not in document
       const saveButton = screen.getByText('Save');
       expect(saveButton).toBeDisabled();
@@ -133,8 +135,9 @@ describe('UserForm', () => {
         "address": "120 Cedar Street, Mansfield, Kentucky, 8890"
       };
       const setUsersMock = jest.fn();
+      const setSelectedUser = jest.fn();
 
-      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} />);
+      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} setSelectedUser={setSelectedUser} />);
       //At first Save btn is disabled and cancel btn is not in document
       let saveButton = screen.getByText('Save');
       expect(saveButton).toBeDisabled();
@@ -168,6 +171,7 @@ describe('UserForm', () => {
     async () => {
       /*     render(<UserForm />, { wrapper: LoaderProvider }); */
       const setUsersMock = jest.fn();
+      const setSelectedUser = jest.fn();
       const selectedUser = {
         "id": "5c093af1aeca1bb00607fb2a",
         "photo": "https://randomuser.me/api/portraits/men/1.jpg",
@@ -178,7 +182,7 @@ describe('UserForm', () => {
         "address": "120 Cedar Street, Mansfield, Kentucky, 8890"
       };
 
-      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} />);
+      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} setSelectedUser={setSelectedUser} />);
       //At first Save btn is disabled and cancel btn is not in document
       const saveButton = screen.getByText('Save');
       expect(saveButton).toBeDisabled();
@@ -206,6 +210,7 @@ describe('UserForm', () => {
     async () => {
       /*     render(<UserForm />, { wrapper: LoaderProvider }); */
       const setUsersMock = jest.fn();
+      const setSelectedUser = jest.fn();
       const selectedUser = {
         "id": "5c093af1aeca1bb00607fb2a",
         "photo": "https://randomuser.me/api/portraits/men/1.jpg",
@@ -233,7 +238,7 @@ describe('UserForm', () => {
         })
       );
 
-      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} />);
+      render(<UserForm selectedUser={selectedUser} setUsers={setUsersMock} setSelectedUser={setSelectedUser} />);
 
       const saveButton = screen.getByText('Save');
       const nameInput = screen.getByLabelText('Name');

@@ -15,7 +15,7 @@ export const formFields = [
     placeholder: 'Enter your email',
     name: "email",
     defaultValue: '',
-    validation: ["string"],
+    validation: ["string", "email"],
   },
   {
     id: 'phone',

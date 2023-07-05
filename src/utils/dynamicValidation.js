@@ -1,9 +1,8 @@
 import {
   string,
-  email,
-  object
+  object,
+  email
 } from "yup";
-import * as yup from "yup";
 
 /* Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -31,11 +30,11 @@ const dynamicValidationSchema = (formFields) => {
         fieldSchema = fieldSchema.required(`${label} is required`);
       }
       if (validation.includes('email')) {
-        fieldSchema = fieldSchema.email();
+        fieldSchema = fieldSchema.email('Invalid email');
       }
-     /*  if (validation.includes('phone')) {
-        fieldSchema = fieldSchema.matches(phoneRegex, "Invalid phone");
-      } */
+      /*  if (validation.includes('phone')) {
+         fieldSchema = fieldSchema.matches(phoneRegex, "Invalid phone");
+       } */
 
       schema[name] = fieldSchema;
     }
