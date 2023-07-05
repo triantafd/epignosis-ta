@@ -8,8 +8,6 @@ function App() {
   //A custom hook similar to how reactQuery works
   const { users, isLoading, error, setUsers } = useFetchUsers()
   const [selectedUser, setSelectedUser] = React.useState({})
-  /*   const MemoizedUserForm = React.memo(UserForm); */
-  /*   const memoizedSelectedUser = React.useMemo(() => selectedUser, [selectedUser]); */
 
   if (error) {
     return <p>Error: {error.message}</p>;
