@@ -3,6 +3,7 @@ import { Formik, Field, Form } from 'formik';
 import { formFields } from '../formConfigurations/usersProfile';
 import { dynamicValidationSchema } from '../utils/dynamicValidation';
 import { useLoader } from '../context/loaderContext';
+import { updateUserProfile } from '../services/userProfiles';
 
 const initialValuesFromConf = formFields.reduce((acc, field) => {
   acc[field.name] = field.defaultValue || '';
@@ -46,21 +47,8 @@ const UserForm = ({ selectedUser, setUsers, setSelectedUser }) => {
               setSubmitting(true);
               try {
                 const wrappedUpdateFuncwithLoader = wrappedWithloader(async (values) => {
-                  const response = await fetch(`https://my-json-server.typicode.com/ThrasyvoulosKafasis/epignosis-users/users/${values.id}`, {
-                    method: "PUT",
-                    headers: {
-                      'Content-type': 'application/json'
-                    },
-                    credentials: "same-origin",
-                    body: JSON.stringify(values)
-                  });
-
-                  if (!response.ok) {
-                    throw new Error('Request failed');
-                  }
-
-                  const data = await response.json();
-                  return data;
+                  const response = await updateUserProfile(values)
+                  return response;
                 });
                 const updatedUser = await wrappedUpdateFuncwithLoader(values);
                 setUsers((previousUsers) => previousUsers.map((user) => user.id === updatedUser.id ? updatedUser : user))

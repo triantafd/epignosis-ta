@@ -13,7 +13,7 @@ const LoaderProvider = ({ children }) => {
       const valueToReturn = await fn(...args);
       return valueToReturn;
     } catch (error) {
-      console.log(error)
+      throw error
     } finally {
       setLoading(false);
     }

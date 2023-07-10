@@ -1,4 +1,5 @@
 import *  as React from 'react'
+import { fetchUserProfiles } from '../services/userProfiles'
 
 const useFetchUsers = () => {
   const [users, setUsers] = React.useState([])
@@ -8,14 +9,12 @@ const useFetchUsers = () => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://my-json-server.typicode.com/ThrasyvoulosKafasis/epignosis-users/db');
-        if (!response.ok) {
-          throw new Error('Response was not ok');
-        }
-        const data = await response.json();
-        setUsers(data.users)
+        const response = await fetchUserProfiles()
+        setUsers(response)
       } catch (error) {
-        setError(error)
+        /*  setError(error) */
+        console.log(error)
+        setUsers([])
       }
       finally {
         setIsLoading(false)
