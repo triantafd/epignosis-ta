@@ -9,7 +9,7 @@ const UserProfile = ({ user }) => {
       <div className="hidden md:block">
         <div className='flex flex-col ml-4 md:none justify-center '>
           <p className="font-medium text-md text-start">{user.name}</p>
-          <p className="text-gray-400 text-sm text-start">{user.email}</p>
+          <p className="text-gray-500 text-sm text-start">{user.email}</p>
         </div>
       </div>
     </div>
