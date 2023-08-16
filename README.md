@@ -18,13 +18,14 @@
  ### 2. How to test the app
     1) npm run test
 
- ### 3. Libraries used.
+ ### 3. Libraries/tools used.
  * React
  * Tailwind for css
  * Jest for tests
  * Context for loadingSpinner
  * Formik to handle Form
  * Yup for formValidation
+ * Wave tool to make the application accessible (remote contrast-errors, errors)
 
  ### 4. About the folder structuring.
   * App.js has two main Containers:
