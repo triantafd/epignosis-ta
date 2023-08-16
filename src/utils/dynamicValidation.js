@@ -4,18 +4,6 @@ import {
   email
 } from "yup";
 
-/* Yup.object().shape({
-  name: Yup.string().required('Name is required'),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  phone: Yup.string().required('Phone Number is required'),
-  address: Yup.string(),
-  company: Yup.string(),
-})
- */
-
-/* const phoneRegex = RegExp(
-  /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-); */
 const dynamicValidationSchema = (formFields) => {
   const schema = {};
 
@@ -32,9 +20,6 @@ const dynamicValidationSchema = (formFields) => {
       if (validation.includes('email')) {
         fieldSchema = fieldSchema.email('Invalid email');
       }
-      /*  if (validation.includes('phone')) {
-         fieldSchema = fieldSchema.matches(phoneRegex, "Invalid phone");
-       } */
 
       schema[name] = fieldSchema;
     }
