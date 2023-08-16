@@ -3,5 +3,5 @@
 ### Description of assignment
 
 
-### Mini-presentation 
+### [Mini-presentation] (epignosis-ta.pdf)
 
