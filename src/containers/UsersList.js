@@ -7,7 +7,7 @@ const UsersList = ({ users, setSelectedUser, isLoading }) => {
 
   return (
     <div className="overflow-y-auto scrollbar-hidden md:flex-1 flex-none relative">
-      {isLoading && <div data-testid="custom-loading-spinner"><CustomLoadingSpinner /></div>}
+      {isLoading && <div data-testid="custom-loading-spinner"><CustomLoadingSpinner outterStyle={'absolute bottom-[50%] left-[50%]'} /></div>}
       {!isLoading && users && users.length === 0 && (
         <div className='absolute bottom-[50%] left-[50%]'>
           <p>No users</p>

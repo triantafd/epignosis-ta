@@ -1,8 +1,7 @@
-export const CustomLoadingSpinner = () => {
+export const CustomLoadingSpinner = ({ outterStyle }) => {
   return (
-    <div className='absolute bottom-[50%] left-[50%]'>
-      <div className="loading-spinner">
-      </div>
+    <div className={`${outterStyle}`}>
+      <div className="loading-spinner"></div>
     </div>
   )
 }

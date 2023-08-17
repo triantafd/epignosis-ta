@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext } from "react";
-import { AppLoadingSpinner } from '../components/Spinners/AppLoadingSpinner'
+import { CustomLoadingSpinner } from '../components/Spinners/CustomLoadingSpinner'
 
 const LoadingContext = createContext({ wrappedWithloader: null });
 
@@ -24,7 +24,7 @@ const LoaderProvider = ({ children }) => {
       value={{ wrappedWithloader }}
     >
       {children}
-      {loading && <AppLoadingSpinner />}
+      {loading && <CustomLoadingSpinner outterStyle={'loading-spinner-overlay'} />}
     </LoadingContext.Provider>
   );
 };
