@@ -18,7 +18,11 @@
  ### 2. How to test the app
     1) npm run test
 
- ### 3. Libraries/tools used.
+ ### 3. How to merge in main branch
+    A simple test workflow was created under .github folder.
+    Branches can be merged manually in main branch after the test automation process (github action) finds no errors.
+
+ ### 4. Libraries/tools used.
  * React
  * Tailwind for css
  * Jest for tests
@@ -27,7 +31,7 @@
  * Yup for formValidation
  * Wave tool to make the application accessible (remote contrast-errors, errors)
 
- ### 4. About the folder structuring.
+ ### 5. About the folder structuring.
   * App.js has two main Containers:
     1. UserForm (right section of the scrollbar)
     2. UsersList (left section of the scrollbar)
