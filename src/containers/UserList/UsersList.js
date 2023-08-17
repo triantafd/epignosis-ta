@@ -1,6 +1,6 @@
 import *  as React from 'react'
-import UserProfile from '../components/UserProfile';
-import { CustomLoadingSpinner } from '../components/Spinners/CustomLoadingSpinner';
+import UserProfile from '../../components/UserProfile/UserProfile';
+import { CustomLoadingSpinner } from '../../components/Spinners/CustomLoadingSpinner';
 
 const UsersList = ({ users, setSelectedUser, isLoading }) => {
   const [selectedIdx, setSelectedIdx] = React.useState(null);

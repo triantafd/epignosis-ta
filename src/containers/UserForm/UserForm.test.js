@@ -1,59 +1,11 @@
 import React from 'react';
-import UsersList from './containers/UsersList';
-import UserProfile from './components/UserProfile';
-import UserForm from './containers/UserForm';
-import { render, fireEvent, waitFor, screen } from './test-utils/testing-library-utils'
+import UserForm from './UserForm';
+import { render, fireEvent, waitFor, screen } from '../../test-utils/testing-library-utils'
 import { act } from 'react-dom/test-utils';
+
 /* import { render, fireEvent, waitFor, screen, act } from '@testing-library/react'; 
 import { LoaderProvider } from './context/loaderContext';
 import userEvent from '@testing-library/user-event' */
-
-describe('UsersList', () => {
-  test('Show No users when users is empty and loading is false', async () => {
-    const setSelectedUser = jest.fn();
-    const users = [];
-    const isLoading = false
-
-    render(<UsersList users={users} isLoading={isLoading} setSelectedUser={setSelectedUser} />);
-
-    const paragraph = screen.getByText('No users');
-    expect(paragraph).toBeInTheDocument();
-  })
-
-  test('Show loading spinner when loading is true', () => {
-    const setSelectedUser = jest.fn();
-    const users = [];
-    const isLoading = true;
-
-    render(<UsersList users={users} isLoading={isLoading} setSelectedUser={setSelectedUser} />);
-
-    const loadingSpinner = screen.getByTestId('custom-loading-spinner');
-    expect(loadingSpinner).toBeInTheDocument();
-  });
-});
-
-describe('UserProfile', () => {
-  test('Render user profile with correct data', () => {
-    const user = {
-      "id": "5c093af1aeca1bb00607fb2a",
-      "photo": "https://randomuser.me/api/portraits/men/1.jpg",
-      "name": "Mollie Oneill",
-      "company": "VIAGRAND",
-      "email": "mollie.oneill@viagrand.biz",
-      "phone": "+1 (852) 535-3880",
-      "address": "120 Cedar Street, Mansfield, Kentucky, 8890"
-    };
-
-    render(<UserProfile user={user} />);
-
-    const nameElement = screen.getByText('Mollie Oneill');
-    const emailElement = screen.getByText('mollie.oneill@viagrand.biz');
-
-    expect(nameElement).toBeInTheDocument();
-    expect(emailElement).toBeInTheDocument();
-  });
-});
-
 
 describe('UserForm', () => {
   test(`When you click on a user

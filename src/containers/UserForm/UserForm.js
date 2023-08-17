@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Formik, Field, Form } from 'formik';
-import { formFields } from '../formConfigurations/usersProfile';
-import { dynamicValidationSchema } from '../utils/dynamicValidation';
-import { useLoader } from '../context/loaderContext';
-import { updateUserProfile } from '../services/userProfiles';
+import { formFields } from '../../formConfigurations/usersProfile';
+import { dynamicValidationSchema } from '../../utils/dynamicValidation';
+import { useLoader } from '../../context/loaderContext';
+import { updateUserProfile } from '../../services/userProfiles';
 
 const initialValuesFromConf = formFields.reduce((acc, field) => {
   acc[field.name] = field.defaultValue || '';

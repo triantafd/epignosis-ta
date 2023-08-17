@@ -1,8 +1,10 @@
 import *  as React from 'react'
 import useFetchUsers from './hooks/useFetchUsers';
 import './index.css';
-import UsersList from './containers/UsersList';
-import UserForm from './containers/UserForm';
+import UsersList from './containers/UserList/UsersList';
+import UserForm from './containers/UserForm/UserForm';
+
+
 
 function App() {
   //A custom hook similar to how reactQuery works
