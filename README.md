@@ -50,6 +50,11 @@
     implemented under context folder. This spinner applies when the user submit a
     form to change anther user’
 
+### 6. TODO (Improve Performance for better user experience)
+ * Virtual Viewport Rendering: Technique often used to improve performance. As the user scrolls, new content is dynamically loaded and rendered as it comes into view.
+ * Data Fetching Only in Viewport: 
+ * Skeleton when Scrolling: 
+
  All the tests for the Five scenarios(user stories/requirements) requested plus some other can be found
  under their corresponding folders.
 
