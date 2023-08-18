@@ -6,11 +6,11 @@
 
 ## Code instructions
   ### 1. How to run the app 
-    1) clone code
-    2) npm install & npm start (dev mode)
-    3) npm install & npm run build & npm install –g server & npm run
+    Clone code
+    1) npm install & npm start (dev mode)
+    2) npm install & npm run build & npm install –g server & npm run
     buildVersion (build mode)
-    4) If user not connected to docker hub and no login/ authentication
+    3) If user not connected to docker hub and no login/ authentication
     required with two possible ways
        1. npm run docker-build & npm run docker-run
        2. npm run docker-build & docker-compose up
@@ -42,10 +42,8 @@
   * The configuration of the userForm can be found under formConfigurations folder.
   * The validation applied is dynamic. The validation script can be found under utils folder.
   
-  * There are two spinners in the app.
-   ** The first spinner is applied only on the left section when users are loading. This
-    is called customLoadingSpinners. Spinners can be found under
-    compnents/Spinners folder.
+  * There are two spinners in the app (One component with prop for stying)
+   ** The first spinner is applied only on the left section when users are loading. 
    ** The second spinner is global in the app. Actually a context loader have been
     implemented under context folder. This spinner applies when the user submit a
     form to change anther user’
