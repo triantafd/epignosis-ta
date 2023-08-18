@@ -21,6 +21,11 @@ const useFetchUsers = () => {
       }
     }
 
+    /* usually
+    IIFE inside useEffect or (then,catch)
+    but in this case there is no problem since we dont use the data inside useEffect
+    fetchData returns promise
+    */
     fetchData();
   }, [])
 
